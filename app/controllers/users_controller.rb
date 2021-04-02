@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:update]
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -12,8 +12,6 @@ class UsersController < ApplicationController
     @books = @user.books
     @book = Book.new
   end
-
-
 
   def edit
     @user = User.find(params[:id])
